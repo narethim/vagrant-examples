@@ -1,10 +1,11 @@
 # vagrant-examples
+
 vagrant examples
 
 ## Useful elementary `vagrant` CLI commands
 
 ```sh
-# Initialize 
+# Initialize
 vagrant init ubuntu/bionic64
 
 # Start it
@@ -29,7 +30,7 @@ vagrant box -h
 vagrant box list
 ```
 
-## Useful `vagrant` CLI commands
+## Useful `vagrant ssh-config` CLI commands
 
 ```sh
 # Vagrant box help
@@ -80,3 +81,7 @@ cd ~/projects/GitHub/
 
 git clone https://github.com/geerlingguy/ansible-vagrant-examples.git
 ```
+
+* [ex-1 - vagrant, ansible roles example](ex-1/README.md)
+* [ex-2 - vagrant, simple ansible playbook example](ex-2/README.md)
+* [ex-3 - vagrant, ansible playbook, templates example](ex-3/README.md)
