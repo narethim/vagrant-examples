@@ -1,0 +1,6 @@
+- hosts: tmp-m-*
+  become: yes
+  roles:
+    - { role: tmp/common}   
+
+

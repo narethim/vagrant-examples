@@ -1,0 +1,10 @@
+[myhost]
+localmachine ansible_host=192.168.0.209
+
+[servers]
+server1 ansible_host=192.168.50.11
+server2 ansible_host=192.168.50.12
+server3 ansible_host=192.168.50.13
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3

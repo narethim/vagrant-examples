@@ -1,0 +1,24 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
+
+Vagrant.configure("2") do |config|
+  ##### VM definition #####
+  
+  config.vm.define "cent01" do |config|
+    config.vm.hostname = "cent01"
+    config.vm.box = "centos/8"
+    config.vm.box_check_update = false
+  
+    config.vm.provision :ansible do |ansible|
+      ansible.limit = "all"
+      ansible.playbook = "provision.yaml"
+    end
+  
+    config.vm.provider :virtualbox do |v|
+      v.memory = 1024
+      v.cpus = 1
+    end
+  end
+end

@@ -1,0 +1,8 @@
+---
+- name: Print a message 1
+  ansible.builtin.debug:
+    msg: "Print a message 1"
+    
+- name: Print a message 2
+  ansible.builtin.debug:
+    msg: "Print a message 2"    

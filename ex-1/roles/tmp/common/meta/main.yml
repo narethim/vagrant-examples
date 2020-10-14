@@ -1,0 +1,5 @@
+dependencies:
+  - { role: add_packages,
+    linux_add_packages_names: "{{ tmp_common_add_packages_names }}",
+    linux_remove_packages_names: "{{ tmp_common_remove_packages_names }}"
+    }

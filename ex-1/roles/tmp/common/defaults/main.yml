@@ -1,0 +1,14 @@
+
+---
+tmp_common_add_packages_names:
+- name: apt-transport-https
+- name: curl
+- name: wget
+
+tmp_common_remove_packages_names:
+- name: 
+
+tmp_common_admin_user:  "ubuntu"
+tmp_common_admin_group: "ubuntu"
+
+
