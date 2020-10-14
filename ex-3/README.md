@@ -45,13 +45,17 @@ vagrant box list
 
 ## Verify
 
+```sh
 firefox http://192.168.50.15:8000
+```
 
-Modify /etc/hosts with the following line
+Modify `sudo vi /etc/hosts` with the following line
 
 192.168.50.15 flask.mydomain.com
 
+```sh
 firefox http://flask.mydomain.com
+```
 
 ## Cleanup
 
