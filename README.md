@@ -38,7 +38,7 @@ vagrant ssh-config
 
 Examples
 
-```
+```sh
 c:\projects\otsuarez\vagrant-k3s-mod2>vagrant ssh-config
 Host master
   HostName 127.0.0.1
@@ -63,11 +63,21 @@ Host node1
   LogLevel FATAL
 ```
 
-
 ```sh
 # Connect to `master` node
 vagrant ssh master
 
 # Connect to `node1` node
 vagrant ssh node1
+```
+
+## Other examples
+
+* [geerlingguy/ansible-vagrant-examples](https://github.com/geerlingguy/ansible-vagrant-examples)
+
+```sh
+
+cd ~/projects/GitHub/vagrant-examples
+
+git clone https://github.com/geerlingguy/ansible-vagrant-examples.git
 ```
