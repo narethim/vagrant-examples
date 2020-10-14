@@ -76,8 +76,7 @@ vagrant ssh node1
 * [geerlingguy/ansible-vagrant-examples](https://github.com/geerlingguy/ansible-vagrant-examples)
 
 ```sh
-
-cd ~/projects/GitHub/vagrant-examples
+cd ~/projects/GitHub/
 
 git clone https://github.com/geerlingguy/ansible-vagrant-examples.git
 ```
