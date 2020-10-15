@@ -8,12 +8,13 @@
 
   tasks:
     - name: Install packages
-      apt: update_cache=yes name={{ item }} state=present
-      with_items:
-        - git
-        - python-pip
-        - nginx
-
+      apt:
+        name:
+          - git
+          - python-pip
+          - nginx
+        state: present
+      
     - name: Clone repository
       git: repo='{{ repository_url }}' dest='{{ repository_path }}'
 
