@@ -51,9 +51,9 @@
       shell: source /home/vagrant/poky/oe-init-build-env
       register: oe_init_result
 
-    - name: Display apt_pkg_result.
+    - name: Display oe_init_result.
       debug:
-        var: apt_pkg_result.stdout
+        var: oe_init_result.stdout
 
     # Start the Build
     - name: Start the Build
