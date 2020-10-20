@@ -49,7 +49,17 @@
     # Initialize the Build Environment
     - name: Source the bash_profile file
       shell: source /home/vagrant/poky/oe-init-build-env
+      register: oe_init_result
+
+    - name: Display apt_pkg_result.
+      debug:
+        var: apt_pkg_result.stdout
 
     # Start the Build
     - name: Start the Build
       shell: /home/vagrant/poky/build/bitbake core-image-sato
+      register: oe_build_result
+
+    - name: Display oe_build_result.
+      debug:
+        var: oe_build_result.stdout
