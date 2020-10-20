@@ -6,15 +6,15 @@ Example that:
  2. provisions it using ansible `playbook`
  3. uses `main.yml` playbook
 
-## Commands
+## Bring VM up Commands
 
-Start VM
+### Start VM
 
 ```sh
 vagrant up
 ```
 
-Provision
+### Provision
 
 ```sh
 vagrant up --provision
@@ -23,35 +23,19 @@ vagrant up --provision
 vagrant provision
 ```
 
-Connect a terminal session to the VM instance
+### Connect a terminal session to the VM instance
 
 ```sh
 vagrant ssh
 ```
 
-Destroy VM
-
-```sh
-vagrant destroy -f
-
-# force destroy
-vagrant destroy -f
-```
-
-```sh
-# list all vagrant box
-vagrant box list
-```
-
-## Setup ommands
+## Setup commands
 
 ```sh
 cd ~/poky
 git fetch --tags
-git tag
 
 git checkout tags/yocto-3.1.3 -b my-yocto-3.1.3
-     Switched to a new branch 'my-yocto-3.1.3'
 ```
 
 ## Building Your Image¶
@@ -59,7 +43,7 @@ git checkout tags/yocto-3.1.3 -b my-yocto-3.1.3
 ### 1. Initialize the Build Environment
 
 ```sh
-$cd ~/poky
+cd ~/poky
 source oe-init-build-env
 ```
 
@@ -84,3 +68,25 @@ runqemu qemux86-64
 ### 5. Exit QEMU
 
 Exit QEMU by either clicking on the shutdown icon or by typing Ctrl-C in the QEMU transcript window from which you evoked QEMU.
+
+## Teardown and cleanup commands
+
+Stop VM
+
+```sh
+vagrant halt
+```
+
+Destroy VM
+
+```sh
+vagrant destroy
+
+# force destroy
+vagrant destroy -f
+```
+
+```sh
+# list all vagrant box
+vagrant box list
+```
