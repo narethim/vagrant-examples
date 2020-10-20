@@ -39,27 +39,25 @@
         var: apt_pkg_result.stdout
 
     # Git checkout
-    - name: Git checkout
+    - name: Git checkout.
       git:
         repo: "git://git.yoctoproject.org/poky"
         dest: "/home/vagrant/poky"
         version: tags/yocto-3.1.3
       become: false
 
-    # Initialize the Build Environment
-    - name: Source the bash_profile file
-      shell: source /home/vagrant/poky/oe-init-build-env
-      register: oe_init_result
+    # You can use shell to run other executables to perform actions inline
+    - name: Run a series of commands to source an env and build it.
+      shell: |
+        cd /home/vagrant/poky
+        source oe-init-build-env
+        bitbake core-image-sato
+      args:
+        executable: /usr/bin/bash
+      become: false
+      register: oe_result
 
-    - name: Display oe_init_result.
+    - name: Display oe_result.
       debug:
-        var: oe_init_result.stdout
-
-    # Start the Build
-    - name: Start the Build
-      shell: /home/vagrant/poky/build/bitbake core-image-sato
-      register: oe_build_result
-
-    - name: Display oe_build_result.
-      debug:
-        var: oe_build_result.stdout
+        var: oe_result.stdout
+      become: false
