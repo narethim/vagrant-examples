@@ -1,15 +1,39 @@
-# Ansible VirtualBox Vagrant Kubernetes
+# ex-6 - vagrant to spin up multiple VMs
 
-## Building a Kubernetes Cluster with Vagrant and Ansible
+Example that:
 
-Tutorial with full source code explaining **how to create a Kubernetes cluster with Ansible and Vagrant** for local development.
+ 1. uses vagrant to spin up multiple VMs
 
-See https://www.itwonderlab.com/en/ansible-kubernetes-vagrant-tutorial/
+## Commands
 
-------------------
+Start VM
 
-## Creación de un Clúster de Kubernetes usando Vagrant y Ansible
+```sh
+vagrant up
+```
 
-Creación de un **clúster Kubernetes con múltiples nodos usando Vagrant, Ansible y Virtualbox**. Especialmente indicado para entornos de desarrollo local realistas.
+Check host names
 
-See https://www.itwonderlab.com/es/cluster-kubernetes-vagrant-ansible/
+```sh
+vagrant ssh-config
+```
+
+Connect a terminal session to the VM instance
+
+```sh
+vagrant <hostname>
+```
+
+Destroy VM
+
+```sh
+vagrant destroy
+
+# force destroy
+vagrant destroy -f
+```
+
+```sh
+# list all vagrant box
+vagrant box list
+```
