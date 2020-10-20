@@ -4,10 +4,12 @@
   tasks:
 
     # Install build-essential package for Ubuntu
-    - name: Install build-essential package for Ubuntu.
+    - name: Install minimal packages for Ubuntu.
       apt:
         pkg:
-          - build-essential
+          - wget
+          - git
+          - curl
         state: present
         update_cache: true
       register: apt_pkg_result
