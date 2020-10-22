@@ -31,7 +31,6 @@
           - xterm
         state: present
         update_cache: true
-      register: apt_pkg_result
 
     # Git checkout
     - name: Git checkout.
