@@ -1,4 +1,4 @@
-# ex-41 - vagrant, ansible playbook, yocto
+# ex-41 - vagrant, ansible playbook, yocto on Ubuntu 18.04
 
 Example that:
 
@@ -50,6 +50,18 @@ source oe-init-build-env
 ### 2. Examine Your Local Configuration File
 
 When you set up the build environment, a local configuration file named local.conf becomes available in a conf subdirectory of the Build Directory. For this example, the defaults are set to build for a qemux86 target, which is suitable for emulation. The package manager used is set to the RPM package manager.
+
+Edit `conf/local.cfg` file
+
+```sh
+vi conf/local.conf
+```
+
+Append to the end of file to save space.
+
+```sh
+INHERIT += "rm_work"
+```
 
 ### 3. Start the Build
 

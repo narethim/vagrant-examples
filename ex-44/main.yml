@@ -1,5 +1,5 @@
 ---
-- name: Playbook to install essential packages for yocto project on Ubuntu linux machine.
+- name: Playbook to install minimal packages for Ubuntu.
   hosts: all
   tasks:
 

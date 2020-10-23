@@ -34,7 +34,7 @@
 
     # Install epel-release
     - name: Install packages epel-release.
-      dnf:
+      yum:
         name:
           - epel-release
         state: present
@@ -44,52 +44,4 @@
       debug:
         var: dnf_pkg_result.stdout
         
-    # dnf config-manager --set-enabled PowerTools
-    - name: dnf config-manager --set-enabled PowerTools.
-      shell: "dnf config-manager --set-enabled PowerTools"
-      register: dnf_cfg_result
 
-    - name: Display dnf_cfg_result.
-      debug:
-        var: dnf_cfg_result.stdout
-
-
-    # dnf makecache
-    - name: dnf makecache.
-      dnf:
-#        name: 
-#        state: present
-        update_cache: true
-      register: dnf_makecache_result
-
-    - name: Display dnf_makecache_result.
-      debug:
-        var: dnf_makecache_result.stdout
-        
-    # Install essential packages for centos8 yocto
-    - name: Install essential packages for centos8 yocto.
-      dnf:
-        name:
-          - gawk,make,wget,tar,bzip2,gzip,python3,unzip,perl,patch
-          - diffutils,diffstat,git,cpp,gcc,gcc-c++,glibc-devel,texinfo,chrpath,ccache
-          - socat,perl-Data-Dumper,perl-Text-ParseWords,perl-Thread-Queue,python3-pip
-          - python3-GitPython,python3-jinja2,python3-pexpect,xz,which,SDL-devel,xterm,rpcgen
-        state: present
-      register: yum_pkg_result
-
-    - name: Display yum_pkg_result.
-      debug:
-        var: yum_pkg_result.stdout
-        
-    # Install documentation manuals
-    - name: Install documentation manuals.
-      dnf:
-        name:
-          - docbook-style-dsssl,docbook-style-xsl
-          - docbook-dtds,docbook-utils,libxslt,dblatex,xmlto
-        state: present
-      register: yum_pkg_result
-
-    - name: Display yum_pkg_result.
-      debug:
-        var: yum_pkg_result.stdout        

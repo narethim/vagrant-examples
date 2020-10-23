@@ -32,11 +32,11 @@
           - xterm
         state: present
         update_cache: true
-      register: apt_pkg_result
+#      register: apt_pkg_result
 
-    - name: Display apt_pkg_result.
-      debug:
-        var: apt_pkg_result.stdout
+#    - name: Display apt_pkg_result.
+#      debug:
+#        var: apt_pkg_result.stdout
 
     # Git checkout
     - name: Git checkout.

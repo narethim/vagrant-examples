@@ -1,4 +1,4 @@
-# ex-5 - vagrant, ansible playbook, yocto
+# ex-5 - vagrant, ansible playbook, yocto on CentOS 8
 
 Example that:
 

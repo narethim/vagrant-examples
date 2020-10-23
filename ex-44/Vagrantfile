@@ -1,32 +1,18 @@
-# Fail if the vagrant-disksize plugin is not installed
-unless Vagrant.has_plugin?("vagrant-disksize")
-    raise 'vagrant-disksize is not installed!'
-end
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
 
-#    config.vm.hostname = "DISKEXTEND"
     config.vm.box = "bento/ubuntu-18.04"
 
     config.vm.provider "virtualbox" do |vb|
-#      vb.name = "DISKEXTEND"
       vb.memory = "4096"
       vb.cpus = "4"
     end
 
-#    config.vm.define :"DISKEXTEND" do |t|
-#    end
-
-
-    # Increase the default disk size of the bento image (64GB) to 96GB
-    config.disksize.size = "100GB"
-
     # Run a script on provisioning the box to format the file system
     # Only work on Ubuntu 18.04, Ubuntu 20.04 does not work
     # 
-    # Comment the following line after it configured the disk-extended.
-#    config.vm.provision "shell", path: "disk-extend.sh"
-
     config.vm.provision "ansible" do |ansible|
       ansible.playbook = "main.yml"
 #      ansible.playbook = "main-build.yml"
