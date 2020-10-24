@@ -5,8 +5,9 @@ MASTERS_CPU = 2
 MASTERS_MEM = 2048
 
 NODES_NUM = 3
-NODES_CPU = 4
+#NODES_CPU = 4
 #NODES_MEM = 2048
+NODES_CPU = 1
 NODES_MEM = 512
 
 
@@ -60,6 +61,17 @@ Vagrant.configure("2") do |config|
  #                   k8s_node_public_ip: "#{IP_BASE}#{j + 10 + MASTERS_NUM}"
  #               }
  #           end
+
+            node.vm.provision "ansible" do |ansible|
+                ansible.playbook = "main.yml"                   
+                #Redefine defaults
+                ansible.extra_vars = {
+#                    k8s_cluster_name:     K8S_NAME,
+                    k8s_node_admin_user:  "vagrant",
+                    k8s_node_admin_group: "vagrant",
+#                    k8s_node_public_ip: "#{IP_BASE}#{j + 10 + MASTERS_NUM}"
+                }
+            end
         end
     end
 end
