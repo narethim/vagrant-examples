@@ -1,0 +1,33 @@
+---
+- name: Playbook to display host info.
+  hosts: all
+
+  tasks:
+    # Get date
+    - name: Get date.
+      command: date
+      register: date_result
+
+    - name: Display date.
+      debug:
+        var: date_result.stdout
+
+    # Get hostname
+    - name: Get hostname.
+      shell: hostname
+      register: hostname_result
+
+    - name: Display hostname_result.
+      debug:
+        var: hostname_result.stdout
+
+    # Get os-release
+    - name: Get os-release.
+      shell: "cat /etc/os-release"
+      register: os_release_result
+
+    - name: Display os_release_result.
+      debug:
+        var: os_release_result.stdout
+        
+
