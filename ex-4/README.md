@@ -94,5 +94,32 @@ git am $HOME/yocto-labs/bootlin-lab-data/0004-fix-bitbake-warnings.patch
 cd $HOME/yocto-labs
 source poky/oe-init-build-env
 
-bitbake core-image-minimal
+Edit `conf/local.conf` file
+
+```sh
+vi conf/local.conf
+```
+
+Append to the end of file to save disk space.
+
+```sh
+INHERIT += "rm_work"
+```
+
+Edit `conf/bblayers.conf` file
+
+```sh
+vi conf/bblayers.conf
+```
+
+Append to the end of file to save disk space.
+
+```sh
+/home/ubuntu/yocto-labs/meta-ti \
+```
+
+Start the build
+
+```sh
+time bitbake core-image-minimal
 ```
